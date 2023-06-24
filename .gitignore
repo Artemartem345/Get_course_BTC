@@ -1,2 +1,2 @@
 .env
-SECRET_KEY
+settings.py
