@@ -7,7 +7,7 @@ from BTC_crypto.models import *
 
 
 def update_BTC_every_10_seconds():
-    result = get_api_json()
+    result = get_binance_btc_json()
     update_database = CryptoBTC.objects.create(name='BTC', price=result['price'], time=datetime.utcnow())
     update_database.save()
 
@@ -19,8 +19,6 @@ app.conf.beat_schedule = {
     'run_me_every_10_sec':{
         'task':'update_BTC_every_10_seconds',
         'schedule':timedelta(seconds=10),
-        
-        
     }
     
 }
