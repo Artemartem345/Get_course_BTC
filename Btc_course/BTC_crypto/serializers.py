@@ -6,5 +6,4 @@ from .models import CryptoBTC
 class CurrencySerializer(serializers.ModelSerializer):
     class Meta:
         model = CryptoBTC
-        exclude = ['id']
-        
+        exclude = ['id']        
