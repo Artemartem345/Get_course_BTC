@@ -2,15 +2,10 @@ import requests
 from .config import api_url
 from .models import *
 from datetime import datetime
-def get_api_json():
-    url_json = requests.get(api_url)
-    data_json = url_json.json()
-    
-    return data_json
+def get_binance_btc_json():
+    return requests.get(api_url).json()
 
-def create_object_models():
-    url_json = requests.get(api_url)
-    data_json = url_json.json()
-    CryptoBTC.objects.create(name='BTC', price=data_json['price'], time=datetime.utcnow())
-    return data_json
-
+def create_cryptobtc_obj():
+    btc_data = get_binance_btc_json()
+    btc = CryptoBTC.objects.create(name='BTC', price=btc_data['price'], time=datetime.utcnow())
+    return btc
