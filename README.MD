@@ -13,4 +13,4 @@
 - python manage.py runserver
 - celery -A Btc_course beat -l info
 - launch worker -> celery -A < Name folder with settings.py > worker -l info
-- Enjoy! you will get actual course BTC from binance every 10 seconds!
+- Enjoy! you will get actual course BTC and LTC from binance every 10 seconds!. All courses will be save in django admin
