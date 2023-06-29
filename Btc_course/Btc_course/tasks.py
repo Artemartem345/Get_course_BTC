@@ -9,9 +9,10 @@ from BTC_crypto.models import *
 def update_BTC_and_LTC_every_10_seconds():
     btc_url = get_binance_btc_json()
     ltc_url = get_binance_ltc_json()
-    update_database = Cryptos.objects.create(name='BTC', price=btc_url['price'], time=datetime.utcnow())
-    update_database = Cryptos.objects.create(name='LTC', price=ltc_url['price'], time=datetime.utcnow())
-    update_database.save()
+    update_database_BTC = Cryptos.objects.create(name='BTC', price=btc_url['price'], time=datetime.utcnow())
+    update_database_LTC = Cryptos.objects.create(name='LTC', price=ltc_url['price'], time=datetime.utcnow())
+    update_database_BTC.save()
+    update_database_LTC.save()
 
 
 
