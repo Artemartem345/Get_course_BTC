@@ -1,9 +1,9 @@
 from rest_framework import serializers
-from .models import CryptoBTC
+from .models import Cryptos
 
 
 
 class CurrencySerializer(serializers.ModelSerializer):
     class Meta:
-        model = CryptoBTC
+        model = Cryptos
         exclude = ['id']        

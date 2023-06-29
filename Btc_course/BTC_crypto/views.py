@@ -10,3 +10,9 @@ class GetCourseBTC(APIView):
         serializer = CurrencySerializer(btc)
         return Response(data=serializer.data, status=status.HTTP_200_OK)
     
+    
+class GetCourseLTC(APIView):
+    def get(self, request):
+        ltc = create_ltc_obj() 
+        serializer = CurrencySerializer(ltc)
+        return Response(data=serializer.data, status=status.HTTP_200_OK)
